@@ -9,8 +9,7 @@
     "linters": "npm run lint-prettier && npm run lint-eslint",
     "dev": "npm run linters && vite",
     "build": "tsc -b && vite build",
-    "preview": "vite preview",
-    "deploy": "gh-pages -d build"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",

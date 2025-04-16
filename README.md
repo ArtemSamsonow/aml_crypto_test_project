@@ -1,54 +1,70 @@
-# React + TypeScript + Vite
+# Тестовое задание для компании ALM Crypto
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Структура проекта
+Проект состоит из двух основных частей:
+- `backend` - серверная часть приложения
+- `frontend` - клиентская часть приложения
 
-Currently, two official plugins are available:
+## Установка и запуск
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Backend
+1. Перейдите в директорию backend:
+```bash
+cd ./backend
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. Запустите сервер:
+```bash
+npm start
 ```
+
+### Frontend
+1. Перейдите в директорию frontend:
+```bash
+cd ./frontend
+```
+
+2. Установите зависимости:
+```bash
+npm install
+```
+
+3. Создайте файл `.env` в корне директории frontend со следующим содержимым:
+```
+VITE_DEV_PORT=3000
+VITE_PROD_PORT=6000
+VITE_HOST="localhost"
+```
+
+4. Запустите проект в режиме разработки:
+```bash
+npm run dev
+```
+
+## Технологии Frontend
+
+### Основные зависимости:
+- **React 19** - библиотека для создания пользовательских интерфейсов
+- **Redux Toolkit** - инструментарий для управления состоянием приложения
+- **React Hook Form** - библиотека для управления формами
+- **Framer Motion** - библиотека для создания анимаций
+- **TailwindCSS** - утилитарный CSS-фреймворк для стилизации
+
+### Инструменты разработки:
+- **TypeScript 5.7** - типизированный JavaScript
+- **Vite 6** - быстрый инструмент для сборки
+- **ESLint 9** - инструмент для статического анализа кода
+- **Prettier** - форматирование кода
+
+## Доступные команды
+
+Для фронтенд части доступны следующие команды:
+
+| Команда | Описание |
+|---------|----------|
+| `npm run lint-prettier` | Форматирует код согласно правилам в `.prettierrc`, применяется ко всем `.ts`, `.tsx`, `.css`, `.scss`, `.md` и `.json` файлам |
+| `npm run lint-eslint` | Проверяет и исправляет ошибки в TypeScript файлах с помощью ESLint |
+| `npm run linters` | Последовательно запускает проверку Prettier и ESLint |
+| `npm run dev` | Запускает линтеры, а затем запускает сервер разработки Vite |
+| `npm run build` | Компилирует TypeScript и собирает проект для продакшена |
+| `npm run preview` | Локально запускает предварительный просмотр собранного продакшен-билда |
